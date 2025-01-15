@@ -1,0 +1,22 @@
+{
+  "printWidth": 120,
+  "tabWidth": 4,
+  "singleQuote": true,
+  "jsxSingleQuote": true,
+  "trailingComma": "none",
+  "semi": false,
+  "arrowParens": "avoid",
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "importOrder": [
+    "<TYPES>^[.]",
+    "<BUILTIN_MODULES>",
+    "^react$",
+    "^@/(.*)$",
+    "<THIRD_PARTY_MODULES>",
+    "^[.]"
+  ],
+  "importOrderSeparation": false,
+  "importOrderSortSpecifiers": true,
+  "pluginSearchDirs": false
+}

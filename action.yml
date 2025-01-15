@@ -1,0 +1,27 @@
+name: 'Compose the build watermark'
+description: 'Generate custom watermark string for your GitHub action build'
+inputs:
+  format:
+    description: 'Format of the watermark'
+    required: true
+    default: 'REF.SHA7 DATE'
+  auto-version:
+    description: 'Define the flavour of the project to read the version from'
+    required: false
+    default: 'npm'
+  version:
+    description: 'Manually set the current version in semver format'
+    required: false
+  empty-value:
+    description: 'Placeholder for any missing value in the watermark format'
+    required: true
+    default: '?'
+outputs:
+  watermark:
+    description: 'The produced watermark'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
+branding:
+  icon: 'hash'
+  color: 'orange'

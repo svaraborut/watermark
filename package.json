@@ -1,0 +1,27 @@
+{
+  "name": "watermark",
+  "version": "1.0.0",
+  "description": "GitHub action to watermark all your CI/CD pipelines",
+  "author": "Borut Svara <borut@svara.io>",
+  "license": "ISC",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "ncc build src/index.ts -o dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/svaraborut/watermark.git"
+  },
+  "bugs": {
+    "url": "https://github.com/svaraborut/watermark/issues"
+  },
+  "homepage": "https://github.com/svaraborut/watermark#readme",
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^6.0.0"
+  },
+  "devDependencies": {
+    "@kkt/ncc": "^1.1.2",
+    "prettier": "^3.4.2"
+  }
+}
