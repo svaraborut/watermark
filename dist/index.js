@@ -36384,7 +36384,7 @@ var core = __webpack_require__(3716);
 ;// external "node:fs"
 const external_node_fs_namespaceObject = require("node:fs");
 ;// ./src/index.ts
-function getInputOrUndefined(name){var value=(0,core.getInput)('format');return value===''?undefined:value;}function getAutoVersion(flavor){flavor=flavor.toLowerCase();if(flavor==='npm'){var pkg=external_node_fs_namespaceObject.readFileSync('package.json','utf8');var v=JSON.parse(pkg).version;return''+v;}else{throw new Error("Unknown flavor ".concat(flavor," for auto version detection"));}}function getDateObject(){var date=new Date();var pad=function pad(number,length){return number.toString().padStart(length,'0').slice(-length);};var _int={YYYY:pad(date.getFullYear(),4),// Year as a 4-digit string
+function getInputOrUndefined(name){var value=(0,core.getInput)(name);return value===''?undefined:value;}function getAutoVersion(flavor){flavor=flavor.toLowerCase();if(flavor==='npm'){var pkg=external_node_fs_namespaceObject.readFileSync('package.json','utf8');var v=JSON.parse(pkg).version;return''+v;}else{throw new Error("Unknown flavor ".concat(flavor," for auto version detection"));}}function getDateObject(){var date=new Date();var pad=function pad(number,length){return number.toString().padStart(length,'0').slice(-length);};var _int={YYYY:pad(date.getFullYear(),4),// Year as a 4-digit string
 YY:pad(date.getFullYear(),2),// Year as a 2-digit string
 MM:pad(date.getMonth()+1,2),// Month as a 2-digit string (1-based)
 DD:pad(date.getDate(),2),// Day of the month as a 2-digit string

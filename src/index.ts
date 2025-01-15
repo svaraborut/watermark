@@ -3,7 +3,7 @@ import { getInput, setFailed, setOutput } from '@actions/core'
 import * as fs from 'node:fs'
 
 function getInputOrUndefined(name: string): string | undefined {
-    const value = getInput('format')
+    const value = getInput(name)
     return value === '' ? undefined : value
 }
 
