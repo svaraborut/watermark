@@ -81,7 +81,16 @@ function run() {
     }
 
     // Execute formatting by replacing all occurrences of known keys with their respective values
-    const rx = new RegExp('(' + Object.keys(values).join('|') + ')', 'g')
+    // Regex is not selecting the longest key, therefore we have to sort them in reverse length order
+    // to trick the regex to match the longest key first.
+    const rx = new RegExp(
+        '(' +
+            Object.keys(values)
+                .sort((a, b) => b.length - a.length)
+                .join('|') +
+            ')',
+        'g'
+    )
     const watermark = format.replace(rx, (_, key) => (values as any)[key] ?? emptyValue)
 
     // Output
