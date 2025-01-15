@@ -39,12 +39,12 @@ Simply add the stage to your build pipeline and configure the preferred watermar
 
 ## Inputs
 
-| Input          | Description                                                                                         | Default         |
-|----------------|-----------------------------------------------------------------------------------------------------|-----------------|
-| `format`       | Format of the watermark                                                                             | `REF.SHA7 DATE` |
-| `auto-version` | Define the flavour of the project to read the version from. See [auto versioning](#auto-versioning) | `npm`           |
-| `version`      | Manually set the current version in semver format                                                   |                 |
-| `empty-value`  | Placeholder for any missing value in the watermark format                                           | `?`             |
+| Input          | Description                                                                | Default         |
+|----------------|----------------------------------------------------------------------------|-----------------|
+| `format`       | Format of the watermark                                                    | `REF.SHA7 DATE` |
+| `auto-version` | Define the flavour of the project, [see auto versioning](#auto-versioning) | `npm`           |
+| `version`      | Manually set the current version in semver format                          |                 |
+| `empty-value`  | Placeholder for any missing value in the watermark format                  | `?`             |
 
 ## Outputs
 
@@ -85,7 +85,7 @@ leveraged.
 ## Auto Versioning
 
 The action will automatically attempt to extract the project version from the repository. This is performed with
-different strategies depending on the `auto-version` approach specified. Currently supported strategies are:
+different strategies depending on the `auto-version` project flavour specified. Currently supported strategies are:
 
 - `npm` where the version will be read from the `package.json` if present
 

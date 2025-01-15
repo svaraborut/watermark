@@ -1,5 +1,5 @@
-name: 'Compose the build watermark'
-description: 'Generate custom watermark string for your GitHub action build'
+name: 'Build Watermark'
+description: 'Create professional CI/CD watermarks for your projects effortlessly'
 inputs:
   format:
     description: 'Format of the watermark'
