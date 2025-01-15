@@ -59,8 +59,7 @@ function run() {
         try {
             version = getAutoVersion(autoVersion)
         } catch (e) {
-            console.error(`❌ Failed to automatically detect the project version`)
-            throw e
+            console.error(`❌ Failed to automatically detect the project version`, e)
         }
     }
     const versionSplit = version?.split('.')
