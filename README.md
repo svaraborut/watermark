@@ -13,14 +13,14 @@ the hood? This is because you are missing a professional watermarking in your pr
         id: watermark
         uses: svaraborut/watermark@v1
         with:
-          format: 'VERSION.SHA7 DATE'
+          format: 'vVERSION - BRANCH.SHA7 - DATE - svara.io'
           auto-version: npm
 
       - name: Build
         ...
         env:
           WATERMARK: ${{ steps.watermark.outputs.watermark }}
-          NEXT_PUBLIC_URL: 'https://i18n.svara.io'
+          NEXT_PUBLIC_URL: 'https://svara.io'
 ```
 
 Simply add the stage to your build pipeline and configure the preferred watermark format using the [syntax](#syntax)
