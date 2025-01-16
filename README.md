@@ -27,15 +27,15 @@ Simply add the stage to your build pipeline and configure the preferred watermar
 
 ## Example Formats
 
-| Format                   | Result                    |
-|--------------------------|---------------------------|
-| `vVERSION`               | `v1.5.127`                |
-| `vMAJOR.MINOR`           | `v1.5`                    |
-| `vVERSION (build BUILD)` | `v1.5.127 (build 17)`     |
-| `vVERSION (DATE)`        | `v1.5.127 (2025-01-15)`   |
-| `BRANCH.SHA7`            | `main.2e6dcdd`            |
-| `BRANCH.SHA7 DATE`       | `main.2e6dcdd 2025-01-15` |
-| `BRANCH.SHA7.RUN`        | `main.2e6dcdd.17`         |
+| Format                 | Result                    |
+|------------------------|---------------------------|
+| `vVERSION`             | `v1.5.127`                |
+| `vMAJOR.MINOR`         | `v1.5`                    |
+| `vVERSION (build RUN)` | `v1.5.127 (build 17)`     |
+| `vVERSION (DATE)`      | `v1.5.127 (2025-01-15)`   |
+| `BRANCH.SHA7`          | `main.2e6dcdd`            |
+| `BRANCH.SHA7 DATE`     | `main.2e6dcdd 2025-01-15` |
+| `BRANCH.SHA7.RUN`      | `main.2e6dcdd.17`         |
 
 ## Inputs
 
