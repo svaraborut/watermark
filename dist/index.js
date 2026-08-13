@@ -2674,7 +2674,7 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.getApiBaseUrl = exports.getProxyFetch = exports.getProxyAgentDispatcher = exports.getProxyAgent = exports.getAuthString = void 0;
 var httpClient = __importStar(__webpack_require__(8964));
-var undici_1 = __webpack_require__(7800);
+var undici_1 = __webpack_require__(5419);
 function getAuthString(token, options) {
   if (!token && !options.auth) {
     throw new Error('Parameter token or opts.auth is required');
@@ -3040,7 +3040,7 @@ var http = __importStar(__webpack_require__(8611));
 var https = __importStar(__webpack_require__(5692));
 var pm = __importStar(__webpack_require__(7956));
 var tunnel = __importStar(__webpack_require__(8506));
-var undici_1 = __webpack_require__(7800);
+var undici_1 = __webpack_require__(5419);
 var HttpCodes;
 (function (HttpCodes) {
   HttpCodes[HttpCodes["OK"] = 200] = "OK";
@@ -6560,7 +6560,7 @@ function _iterableToArray(r) {
 }
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js
-var unsupportedIterableToArray = __webpack_require__(5419);
+var unsupportedIterableToArray = __webpack_require__(7800);
 ;// ./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js
 function _nonIterableSpread() {
   throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
@@ -8282,7 +8282,7 @@ exports.debug = debug; // for test
 
 /***/ }),
 
-/***/ 7800:
+/***/ 5419:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -35739,7 +35739,7 @@ function _asyncToGenerator(n) {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ _createForOfIteratorHelper)
 /* harmony export */ });
-/* harmony import */ var _unsupportedIterableToArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5419);
+/* harmony import */ var _unsupportedIterableToArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7800);
 
 function _createForOfIteratorHelper(r, e) {
   var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"];
@@ -36208,7 +36208,7 @@ function _iterableToArrayLimit(r, l) {
 }
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js
-var unsupportedIterableToArray = __webpack_require__(5419);
+var unsupportedIterableToArray = __webpack_require__(7800);
 ;// ./node_modules/@babel/runtime/helpers/esm/nonIterableRest.js
 function _nonIterableRest() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
@@ -36282,7 +36282,7 @@ function _typeof(o) {
 
 /***/ }),
 
-/***/ 5419:
+/***/ 7800:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -36375,6 +36375,8 @@ var __webpack_exports__ = {};
 (() => {
 "use strict";
 
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js + 3 modules
+var slicedToArray = __webpack_require__(296);
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectSpread2.js
 var objectSpread2 = __webpack_require__(9379);
 // EXTERNAL MODULE: ./node_modules/@actions/github/lib/github.js
@@ -36384,7 +36386,7 @@ var core = __webpack_require__(3716);
 ;// external "node:fs"
 const external_node_fs_namespaceObject = require("node:fs");
 ;// ./src/index.ts
-function getInputOrUndefined(name){var value=(0,core.getInput)(name);return value===''?undefined:value;}function getAutoVersion(flavor){flavor=flavor.toLowerCase();if(flavor==='npm'){var pkg=external_node_fs_namespaceObject.readFileSync('package.json','utf8');var v=JSON.parse(pkg).version;return''+v;}else{throw new Error("Unknown flavor ".concat(flavor," for auto version detection"));}}function getDateObject(){var date=new Date();var pad=function pad(number,length){return number.toString().padStart(length,'0').slice(-length);};var _int={YYYY:pad(date.getFullYear(),4),// Year as a 4-digit string
+function getInputOrUndefined(name){var value=(0,core.getInput)(name);return value===''?undefined:value;}function getAutoVersion(flavor){flavor=flavor.toLowerCase();if(flavor==='npm'){var pkg=external_node_fs_namespaceObject.readFileSync('package.json','utf8');var v=JSON.parse(pkg).version;return''+v;}else{throw new Error("Unknown flavor ".concat(flavor," for auto version detection"));}}function toFileSafe(value){return value.replace(/[^a-zA-Z0-9._-]+/g,'-');}function getDateObject(){var date=new Date();var pad=function pad(number,length){return number.toString().padStart(length,'0').slice(-length);};var _int={YYYY:pad(date.getFullYear(),4),// Year as a 4-digit string
 YY:pad(date.getFullYear(),2),// Year as a 2-digit string
 MM:pad(date.getMonth()+1,2),// Month as a 2-digit string (1-based)
 DD:pad(date.getDate(),2),// Day of the month as a 2-digit string
@@ -36395,11 +36397,11 @@ ss:pad(date.getSeconds(),2)// Seconds as a 2-digit string
 };return (0,objectSpread2/* default */.A)((0,objectSpread2/* default */.A)({},_int),{},{DATE:"".concat(_int.YYYY,"-").concat(_int.MM,"-").concat(_int.DD),DATETIME:"".concat(_int.YYYY,"-").concat(_int.MM,"-").concat(_int.DD," ").concat(_int.HH,":").concat(_int.mm)});}function run(){var _getInputOrUndefined,_getInputOrUndefined2,_version;// Read external values
 var format=getInputOrUndefined('format');var autoVersion=(_getInputOrUndefined=getInputOrUndefined('auto-version'))!==null&&_getInputOrUndefined!==void 0?_getInputOrUndefined:'npm';var manualVersion=getInputOrUndefined('version');var emptyValue=(_getInputOrUndefined2=getInputOrUndefined('empty-value'))!==null&&_getInputOrUndefined2!==void 0?_getInputOrUndefined2:'?';if(!format){console.error("\u274C Watermark format has not been provided");}else{console.log("\uD83D\uDC49 Creating watermark with format ".concat(format));}// Attempt to retrieve a version
 var version=undefined;if(manualVersion){version=manualVersion;}else if(autoVersion){try{version=getAutoVersion(autoVersion);}catch(e){console.error("\u274C Failed to automatically detect the project version",e);}}var versionSplit=(_version=version)===null||_version===void 0?void 0:_version.split('.');// Produce values
-var values=(0,objectSpread2/* default */.A)({REF:github.context.ref,BRANCH:github.context.ref.startsWith('refs/heads/')?github.context.ref.replace('refs/heads/',''):undefined,TAGS:github.context.ref.startsWith('refs/tags/')?github.context.ref.replace('refs/tags/',''):undefined,SHA:github.context.sha,SHA7:github.context.sha.substring(0,7),SHA8:github.context.sha.substring(0,8),RUN:github.context.runNumber,VERSION:version,MAYOR:versionSplit===null||versionSplit===void 0?void 0:versionSplit[0],MINOR:versionSplit===null||versionSplit===void 0?void 0:versionSplit[1],PATCH:versionSplit===null||versionSplit===void 0?void 0:versionSplit[2]},getDateObject());// Execute formatting by replacing all occurrences of known keys with their respective values
+var branch=github.context.ref.startsWith('refs/heads/')?github.context.ref.replace('refs/heads/',''):undefined;var tag=github.context.ref.startsWith('refs/tags/')?github.context.ref.replace('refs/tags/',''):undefined;var values=(0,objectSpread2/* default */.A)({REF:github.context.ref,BRANCH:branch,BRANCH_FILE:branch?toFileSafe(branch):undefined,BRANCH_PREFIX:branch?branch.split('/')[0]:undefined,TAGS:tag,TAG_FILE:tag?toFileSafe(tag):undefined,SHA:github.context.sha,SHA7:github.context.sha.substring(0,7),SHA8:github.context.sha.substring(0,8),RUN:github.context.runNumber,VERSION:version,MAYOR:versionSplit===null||versionSplit===void 0?void 0:versionSplit[0],MINOR:versionSplit===null||versionSplit===void 0?void 0:versionSplit[1],PATCH:versionSplit===null||versionSplit===void 0?void 0:versionSplit[2]},getDateObject());// Execute formatting by replacing all occurrences of known keys with their respective values
 // Regex is not selecting the longest key, therefore we have to sort them in reverse length order
 // to trick the regex to match the longest key first.
 var rx=new RegExp('('+Object.keys(values).sort(function(a,b){return b.length-a.length;}).join('|')+')','g');var watermark=format.replace(rx,function(_,key){var _key;return(_key=values[key])!==null&&_key!==void 0?_key:emptyValue;});// Output
-console.log("\uD83C\uDF9F\uFE0F Watermark is ".concat(watermark));(0,core.setOutput)('watermark',watermark);}try{run();}catch(error){(0,core.setFailed)(error.message);}
+console.log("\uD83C\uDF9F\uFE0F Watermark is ".concat(watermark));(0,core.setOutput)('watermark',watermark);for(var _i=0,_Object$entries=Object.entries(values);_i<_Object$entries.length;_i++){var _Object$entries$_i=(0,slicedToArray/* default */.A)(_Object$entries[_i],2),key=_Object$entries$_i[0],value=_Object$entries$_i[1];(0,core.setOutput)(key,value!==null&&value!==void 0?value:'');}}try{run();}catch(error){(0,core.setFailed)(error.message);}
 })();
 
 module.exports = __webpack_exports__;
