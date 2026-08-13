@@ -19,6 +19,46 @@ inputs:
 outputs:
   watermark:
     description: 'The produced watermark'
+  REF:
+    description: 'The fully-formed ref of the branch or tag that triggered the workflow run'
+  BRANCH:
+    description: 'The branch that triggered the workflow run'
+  TAGS:
+    description: 'The tag that triggered the workflow run'
+  SHA:
+    description: 'The hash of the commit that is being processed'
+  SHA8:
+    description: 'The first 8 digits of the commit hash'
+  SHA7:
+    description: 'The first 7 digits of the commit hash'
+  RUN:
+    description: 'The incremental id of the GitHub action run'
+  VERSION:
+    description: 'The current project version'
+  MAYOR:
+    description: 'The mayor component of the project version'
+  MINOR:
+    description: 'The minor component of the project version'
+  PATCH:
+    description: 'The patch component of the project version'
+  DATE:
+    description: 'The current date'
+  DATETIME:
+    description: 'The current date and time'
+  YYYY:
+    description: 'The current year as a 4-digit string'
+  YY:
+    description: 'The current year as a 2-digit string'
+  MM:
+    description: 'The current month as a 2-digit string'
+  DD:
+    description: 'The current day of the month as a 2-digit string'
+  HH:
+    description: 'The current hour as a 2-digit string'
+  mm:
+    description: 'The current minute as a 2-digit string'
+  ss:
+    description: 'The current second as a 2-digit string'
 runs:
   using: 'node20'
   main: 'dist/index.js'

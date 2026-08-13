@@ -49,6 +49,9 @@ Simply add the stage to your build pipeline and configure the preferred watermar
 ## Outputs
 
 - `watermark` The produced watermark
+- Every keyword described in the [syntax](#syntax) section is also exposed as its own output, so you can consume
+  `steps.watermark.outputs.VERSION`, `steps.watermark.outputs.BRANCH`, `steps.watermark.outputs.SHA7` and so on
+  without having to build a custom format
 
 ## Syntax
 

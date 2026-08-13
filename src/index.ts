@@ -96,6 +96,9 @@ function run() {
     // Output
     console.log(`🎟️ Watermark is ${watermark}`)
     setOutput('watermark', watermark)
+    for (const [key, value] of Object.entries(values)) {
+        setOutput(key, value ?? '')
+    }
 }
 
 try {
