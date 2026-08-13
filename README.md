@@ -11,7 +11,7 @@ the hood? This is because you are missing a professional watermarking in your pr
 ```yaml
       - name: Watermark
         id: watermark
-        uses: svaraborut/watermark@v1
+        uses: svaraborut/watermark@v2
         with:
           format: 'vVERSION - BRANCH.SHA7 - DATE - svara.io'
           auto-version: npm
