@@ -23,6 +23,10 @@ outputs:
     description: 'The fully-formed ref of the branch or tag that triggered the workflow run'
   BRANCH:
     description: 'The branch that triggered the workflow run'
+  BRANCH_FILE:
+    description: 'The branch name in a filename-safe format'
+  BRANCH_PREFIX:
+    description: 'The portion of the branch name before the first slash, if any'
   TAGS:
     description: 'The tag that triggered the workflow run'
   SHA:

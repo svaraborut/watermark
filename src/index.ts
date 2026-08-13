@@ -18,6 +18,10 @@ function getAutoVersion(flavor: string): string | undefined {
     }
 }
 
+function toFileSafe(value: string): string {
+    return value.replace(/[^a-zA-Z0-9._-]+/g, '-')
+}
+
 function getDateObject() {
     const date = new Date()
     const pad = (number: any, length: number) => number.toString().padStart(length, '0').slice(-length)
@@ -65,9 +69,12 @@ function run() {
     const versionSplit = version?.split('.')
 
     // Produce values
+    const branch = context.ref.startsWith('refs/heads/') ? context.ref.replace('refs/heads/', '') : undefined
     const values = {
         REF: context.ref,
-        BRANCH: context.ref.startsWith('refs/heads/') ? context.ref.replace('refs/heads/', '') : undefined,
+        BRANCH: branch,
+        BRANCH_FILE: branch ? toFileSafe(branch) : undefined,
+        BRANCH_PREFIX: branch ? branch.split('/')[0] : undefined,
         TAGS: context.ref.startsWith('refs/tags/') ? context.ref.replace('refs/tags/', '') : undefined,
         SHA: context.sha,
         SHA7: context.sha.substring(0, 7),
