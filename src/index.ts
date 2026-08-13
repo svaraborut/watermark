@@ -70,12 +70,14 @@ function run() {
 
     // Produce values
     const branch = context.ref.startsWith('refs/heads/') ? context.ref.replace('refs/heads/', '') : undefined
+    const tag = context.ref.startsWith('refs/tags/') ? context.ref.replace('refs/tags/', '') : undefined
     const values = {
         REF: context.ref,
         BRANCH: branch,
         BRANCH_FILE: branch ? toFileSafe(branch) : undefined,
         BRANCH_PREFIX: branch ? branch.split('/')[0] : undefined,
-        TAGS: context.ref.startsWith('refs/tags/') ? context.ref.replace('refs/tags/', '') : undefined,
+        TAGS: tag,
+        TAG_FILE: tag ? toFileSafe(tag) : undefined,
         SHA: context.sha,
         SHA7: context.sha.substring(0, 7),
         SHA8: context.sha.substring(0, 8),

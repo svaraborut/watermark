@@ -29,6 +29,8 @@ outputs:
     description: 'The portion of the branch name before the first slash, if any'
   TAGS:
     description: 'The tag that triggered the workflow run'
+  TAG_FILE:
+    description: 'The tag name in a filename-safe format'
   SHA:
     description: 'The hash of the commit that is being processed'
   SHA8:
