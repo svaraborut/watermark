@@ -61,10 +61,11 @@ outputs:
     description: 'The current day of the month as a 2-digit string'
   HH:
     description: 'The current hour as a 2-digit string'
-  mm:
-    description: 'The current minute as a 2-digit string'
-  ss:
-    description: 'The current second as a 2-digit string'
+# Omitted as overlapping with uppercase MM
+#  mm:
+#    description: 'The current minute as a 2-digit string'
+#  ss:
+#    description: 'The current second as a 2-digit string'
 runs:
   using: 'node20'
   main: 'dist/index.js'

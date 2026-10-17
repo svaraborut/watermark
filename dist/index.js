@@ -36401,7 +36401,8 @@ var branch=github.context.ref.startsWith('refs/heads/')?github.context.ref.repla
 // Regex is not selecting the longest key, therefore we have to sort them in reverse length order
 // to trick the regex to match the longest key first.
 var rx=new RegExp('('+Object.keys(values).sort(function(a,b){return b.length-a.length;}).join('|')+')','g');var watermark=format.replace(rx,function(_,key){var _key;return(_key=values[key])!==null&&_key!==void 0?_key:emptyValue;});// Output
-console.log("\uD83C\uDF9F\uFE0F Watermark is ".concat(watermark));(0,core.setOutput)('watermark',watermark);for(var _i=0,_Object$entries=Object.entries(values);_i<_Object$entries.length;_i++){var _Object$entries$_i=(0,slicedToArray/* default */.A)(_Object$entries[_i],2),key=_Object$entries$_i[0],value=_Object$entries$_i[1];(0,core.setOutput)(key,value!==null&&value!==void 0?value:'');}}try{run();}catch(error){(0,core.setFailed)(error.message);}
+console.log("\uD83C\uDF9F\uFE0F Watermark is ".concat(watermark));console.log("Other values are:");(0,core.setOutput)('watermark',watermark);for(var _i=0,_Object$entries=Object.entries(values);_i<_Object$entries.length;_i++){var _Object$entries$_i=(0,slicedToArray/* default */.A)(_Object$entries[_i],2),key=_Object$entries$_i[0],value=_Object$entries$_i[1];// Skip conflicting keys
+if(key==='mm'||key==='ss')continue;console.log("   ".concat(key,": ").concat(value));(0,core.setOutput)(key,value!==null&&value!==void 0?value:'');}}try{run();}catch(error){(0,core.setFailed)(error.message);}
 })();
 
 module.exports = __webpack_exports__;

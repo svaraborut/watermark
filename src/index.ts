@@ -104,8 +104,12 @@ function run() {
 
     // Output
     console.log(`🎟️ Watermark is ${watermark}`)
+    console.log(`Other values are:`)
     setOutput('watermark', watermark)
     for (const [key, value] of Object.entries(values)) {
+        // Skip conflicting keys
+        if (key === 'mm' || key === 'ss') continue;
+        console.log(`   ${key}: ${value}`)
         setOutput(key, value ?? '')
     }
 }
