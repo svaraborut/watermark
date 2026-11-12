@@ -83,9 +83,11 @@ function run() {
         SHA8: context.sha.substring(0, 8),
         RUN: context.runNumber,
         VERSION: version,
-        MAYOR: versionSplit?.[0],
+        MAJOR: versionSplit?.[0],
         MINOR: versionSplit?.[1],
         PATCH: versionSplit?.[2],
+        // legacy typo
+        MAYOR: versionSplit?.[0],
         ...getDateObject()
     }
 

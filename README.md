@@ -100,7 +100,7 @@ Alternatively, the action can be provided a `version` as an imput parameter that
 | Keyword   | Example   |
 |-----------|-----------|
 | `VERSION` | `1.5.127` |
-| `MAYOR`   | `1`       |
+| `MAJOR`   | `1`       |
 | `MINOR`   | `5`       |
 | `PATCH`   | `127`     |
 

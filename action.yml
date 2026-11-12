@@ -41,8 +41,8 @@ outputs:
     description: 'The incremental id of the GitHub action run'
   VERSION:
     description: 'The current project version'
-  MAYOR:
-    description: 'The mayor component of the project version'
+  MAJOR:
+    description: 'The major component of the project version'
   MINOR:
     description: 'The minor component of the project version'
   PATCH:
@@ -66,6 +66,9 @@ outputs:
 #    description: 'The current minute as a 2-digit string'
 #  ss:
 #    description: 'The current second as a 2-digit string'
+  # Legacy typo
+  MAYOR:
+    description: 'The major component of the project version (legacy typo)'
 runs:
   using: 'node20'
   main: 'dist/index.js'
